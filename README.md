@@ -5,208 +5,402 @@
 **Prepare any project for everyday agentic engineering.**  
 **Her projeyi günlük agentic mühendislik çalışmasına hazırla.**
 
-[v2.3 · Foundation](./FOUNDATION.md)
+[v2.3 · FOUNDATION.md](./FOUNDATION.md)
 
-Choose your language below. · Aşağıdan dilini seç.
+Choose your language. · Dilini seç.
 
 </div>
 
 ---
 
 <details>
-<summary><strong>English — What it is & how to use it</strong></summary>
+<summary><strong>English — Overview, scenarios & copy-ready prompts</strong></summary>
 
-You open a project. The code is there, but the context is scattered: an old README, rules from a previous session, a test command nobody has checked, decisions that only exist in a conversation.
+## What is it?
 
-**Codex Engineering Foundation is a reusable Markdown guide that helps Codex turn that starting point into a usable engineering environment.** It inspects what exists, fills the important gaps, checks the result, and leaves project-specific guidance for everyday work.
+**One Markdown guide for establishing or repairing the environment a coding agent needs to work on your project.** Give it to Codex in the target project. It helps Codex discover the code and intent, resolve important gaps, establish working instructions, check relevant tools, and hand daily work over to project-local guidance.
 
-Here, *agentic engineering* means working with a coding agent that can inspect files, make changes and run checks. The Foundation establishes the context and working conditions that help it do that consistently.
-
-```text
-Your project as it is
-        ↓
-Discover → Prepare or repair → Verify → Hand off
-        ↓
-Daily work through the project's own instructions
-```
-
-## When would I use it?
-
-| Your starting point | What the Foundation helps establish |
-| :--- | :--- |
-| A new project | Enough direction, setup and guidance to begin development. |
-| Existing code with no agent guidance | A way to understand, change and verify the project. |
-| Conflicting or outdated agent instructions | A coherent working environment that preserves useful existing material. |
-| A rebuild or modernization | A clear distinction between current behavior and the intended target. |
-| An unfamiliar project | Reliable orientation, with important unknowns made visible. |
-
-It adapts to the project. There is no required stack, folder layout, skill collection or multi-agent setup.
-
-## Start in three steps
-
-1. **Open your target project in Codex.** For a new project, provide its purpose and the constraints you already know.
-2. **Make [the v2.3 guide](./FOUNDATION.md) available to that session.** Download it and attach it, or give Codex its accessible local file path. It does not have to live inside your project.
-3. **Send the request below.** Replace the bracketed parts with your own information.
+An *agentic engineering environment* is the combination of instructions, accessible project knowledge, tools, verification paths and continuity between sessions. The Foundation adapts these to your project; it does not require a particular stack or folder template.
 
 ```text
-Apply the attached Codex Engineering Foundation v2.3 to this project.
-
-Project: [target directory]
-Purpose and constraints: [what the project does and what matters]
-
-Inspect the current code, documentation, instructions and working setup.
-Preserve existing work and useful structure. Establish or repair the
-smallest sufficient agentic engineering environment.
-
-Ask only for important information you cannot discover.
-Validate navigation and relevant working conditions without implementing
-a product feature or turning an example task into assigned work.
-
-Finish with READY or NOT READY for a clearly stated scope, the evidence,
-remaining limitations, and where daily work should begin.
+Inspect the project → Establish or repair the environment → Verify → Hand off
 ```
 
-For an existing project, a short description is enough to start discovery. You do not need to write a full specification or pick the next feature before using the guide.
+**The deliverable is a usable working environment.** Product development starts afterward. Setup may include a small generic scaffold, but does not implement a feature or complete a bug fix as proof of readiness.
 
-## What should I get back?
+## Before you start
 
-A future session should be able to answer:
+1. Open the **target project** in Codex, rather than this guide's repository. For a new project, use its intended directory.
+2. Download or attach [FOUNDATION.md](./FOUNDATION.md), or provide its accessible local path. No package installation is needed for the guide.
+3. Choose the matching scenario below. Replace the bracketed fields and remove examples that do not apply. Each prompt is standalone.
 
-- What is this project trying to do?
-- Which instructions apply?
-- Where is the relevant code and knowledge?
-- How do I work on it and check a change?
-- What remains unknown or unavailable?
-- Where do I record decisions so the next session can continue?
+You do not need a full specification or a selected backlog item. State what you know; leave unknowns visible. Examples below are illustrative, not required technologies or project structures.
 
-The result may include an `AGENTS.md`, corrected documentation links, setup commands and maintenance instructions. The exact files depend on what the project already has. File count is not a measure of success.
+## Choose your starting point
 
-**READY** means the environment supports the stated scope of work, with limitations made explicit. **NOT READY** means a specific environment gap still prevents that work. Neither result is a claim that the application is bug-free.
-
-## Where does it stop?
-
-The Foundation's job ends at the handoff. It can establish a small generic scaffold when needed, but it does not build the first feature, finish a historical bug fix or execute live business operations to prove readiness.
-
-Afterward, start daily tasks from the project's own instructions. Keep useful knowledge current as code changes. Revisit the Foundation when the environment needs substantial repair or the project's direction changes.
-
-You can keep the guide outside the project. If you retain a project-local copy, treat it as a setup reference rather than something every session must reread.
-
-## What's in this repository?
-
-| File | Role |
+| Situation | Use |
 | :--- | :--- |
-| [FOUNDATION.md](./FOUNDATION.md) | The English source guide to give Codex. |
-| [README.md](./README.md) | English and Turkish introduction and usage. |
+| No implementation yet | **1 · New project** |
+| Existing code, no agent guidance | **2 · Establish an environment** |
+| Guidance exists but is unreliable | **3 · Repair an environment** |
+| Rebuilding or changing the system's direction | **4 · Modernization** |
+| Taking over a project with little reliable context | **5 · Project recovery** |
+| Environment already works; you want to check it | **6 · Readiness check** |
 
-No package installation is required to read or apply the guide. The target project still needs its own tools, dependencies and access.
+### 1 · New project
 
-## Status and feedback
+**Example:** A booking application whose users and platform are known, but whose code has not been written.
 
-Version 2.3 has been exercised on a new project, an existing project without agent instructions, and a project whose agentic environment needed repair. These exercises led to revisions; they do not certify every stack or scenario. Broader modernization and recovery cases still need real-project validation.
+**Steps:** Provide the project purpose and known constraints → let Codex resolve setup-critical questions → review the environment handoff before assigning implementation.
 
-Useful feedback describes the starting situation, what the guide caused, and what general rule would improve it. Keep private project details out of public reports.
+```text
+Apply the attached FOUNDATION.md (v2.3) to a new project.
+Target directory: [path]
+Purpose and users: [e.g. bookings for a small service business]
+Known constraints: [platform, stack if chosen, data or delivery constraints]
+Undecided: [important choices still open]
 
----
+Establish the smallest environment needed to begin engineering.
+Ask only for missing decisions that affect setup. Prepare generic
+scaffolding only where needed; do not implement the first feature.
+Validate context navigation and applicable working conditions.
+Report READY or NOT READY, scope, evidence, limits and the daily entry point.
+```
 
-**A successful setup leaves the next session somewhere clear to begin.**
+**Expected handoff:** Project direction, working instructions, initial setup/verification paths, and visible decisions still needed for later tasks.
+
+### 2 · Existing code, no agent guidance
+
+**Example:** A backend already used by a team, with a short README and undocumented working practices.
+
+**Steps:** Provide the repository and a short purpose → let Codex discover code, configuration and existing checks → review the guidance and execution limits it leaves behind.
+
+```text
+Apply the attached FOUNDATION.md (v2.3) to this existing project.
+Repository: [path]
+Purpose: [what the system does]
+Known operating constraints: [if any]
+
+Inspect code, documentation, configuration and existing checks before
+asking questions. Establish missing project-local instructions,
+context navigation, verification guidance and knowledge maintenance.
+Preserve existing structure and uncommitted work. Use a relevant
+existing workflow as a navigation example, not an assigned product task.
+Inspect command side effects before running appropriate basic checks.
+Do not fix application bugs or migrate business data during setup.
+Report READY or NOT READY, evidence, limits and where daily work begins.
+```
+
+**Expected handoff:** A discoverable path from instructions to relevant code and checks, with observed behavior distinguished from accepted requirements.
+
+### 3 · Existing environment needs repair
+
+**Example:** AGENTS.md conflicts with another guide, links point to removed files, or every session loads too much context.
+
+**Steps:** Describe symptoms you have noticed → let Codex compare instructions with their scope and evidence → review focused repairs and what was preserved.
+
+```text
+Apply the attached FOUNDATION.md (v2.3) to repair this agentic environment.
+Repository: [path]
+Symptoms: [e.g. conflicting instructions, stale paths, repeated discovery]
+Preferences to preserve: [known working agreements, if any]
+
+Audit existing instructions, context documents, skills and verification
+routes. Identify concrete conflicts and gaps before changing them.
+Preserve useful structure and user preferences; do not create a parallel
+instruction system. Mark obsolete guidance clearly and preserve useful
+history. Repair only justified environment issues, not product code.
+Validate task navigation and appropriate working conditions.
+Report repairs, preserved material, evidence and scoped READY/NOT READY.
+```
+
+**Expected handoff:** Clear authority, working references and coherent daily guidance within the existing structure.
+
+### 4 · Rebuild or modernization
+
+**Example:** Replacing a desktop application with a web application while preserving selected business workflows.
+
+**Steps:** Identify current and target locations → explain why change is needed and what must be preserved → resolve material target gaps before environment setup is declared complete.
+
+```text
+Apply the attached FOUNDATION.md (v2.3) for modernization setup.
+Current system: [path or accessible sources]
+Target project: [path; may be the same repository]
+Reason for change: [why]
+Target direction: [what should change]
+Must preserve: [workflows, contracts or compatibility]
+Migration and operating constraints: [known limits or unknowns]
+
+Distinguish current implementation from accepted target intent.
+Do not assume every legacy behavior must be copied or discarded.
+Resolve missing target decisions only where they block environment
+readiness. Establish target guidance, reference navigation and verification
+paths. Do not implement the rewrite or execute a data migration.
+Report READY or NOT READY with evidence, unresolved decisions and handoff.
+```
+
+**Expected handoff:** A usable target environment with explicit preservation/change decisions and links to relevant legacy evidence.
+
+### 5 · Unfamiliar project or missing context
+
+**Example:** An inherited repository with old documents and no reliable setup explanation.
+
+**Steps:** Share available sources and known facts → let Codex recover minimum reliable context → review confirmed findings, uncertainties and any access blockers.
+
+```text
+Apply the attached FOUNDATION.md (v2.3) to recover this project's context.
+Repository: [path]
+What I know: [brief facts, or unknown]
+Other available sources: [documents or references, if any]
+
+Recover enough reliable understanding to establish an engineering
+environment. Distinguish observed facts, inferences and unknowns.
+Do not invent requirements or treat old documentation as current truth.
+Preserve existing work. Build the smallest useful navigation and working
+guidance; inspect execution side effects before basic checks.
+Do not redesign the system or start a product task.
+Report scoped READY/NOT READY, evidence and remaining information needs.
+```
+
+**Expected handoff:** Reliable orientation and a clear account of what remains unknown, rather than a fabricated specification.
+
+### 6 · Already prepared: check readiness
+
+**Example:** A project has maintained instructions and checks; you want to know whether anything important is missing.
+
+**Steps:** Identify the daily-work scope → request an inspection-only assessment → decide separately whether reported gaps need repair.
+
+```text
+Use the attached FOUNDATION.md (v2.3) to assess this environment.
+Repository: [path]
+Intended daily-work scope: [what engineers need to do]
+
+Inspect existing guidance and walk through a relevant task's context
+and verification route. Run only appropriate non-destructive basic checks
+within existing permissions. Do not edit project files or generate a new
+instruction structure. Report READY or NOT READY with concrete evidence,
+limits and the smallest repairs needed, if any.
+```
+
+**Expected handoff:** A supported readiness conclusion. An already adequate environment does not need new files.
+
+## How to read the result
+
+| Result | Meaning | Your next step |
+| :--- | :--- | :--- |
+| **READY** | The stated engineering scope is supported; limits are explicit. | Start a daily task from the project's own instructions. |
+| **NOT READY** | A specific environment gap prevents that scope. | Resolve the named prerequisite or decision, then reassess the affected capability. |
+
+Look for evidence: instructions can be found, code and knowledge are reachable, applicable checks have actual outcomes, and future sessions know where decisions belong. File creation alone is not success. A passing build is not product acceptance; an untested future integration is not automatically a setup blocker.
+
+## After the handoff
+
+Use project-local instructions for everyday tasks and update useful knowledge as the project changes. Keep FOUNDATION.md as an optional setup reference, inside or outside the project. Reapply it for substantial environment repair or a change of direction, not every coding session.
+
+## Files and validation status
+
+- **[FOUNDATION.md](./FOUNDATION.md):** The English source guide applied by Codex.
+- **README.md:** This bilingual usage guide; the prompts supplement the Foundation.
+
+V2.3 has been exercised in real new-project, existing-code and environment-repair cases. Broader modernization and recovery still need real-project validation. Finalized wording does not certify every scenario or stack.
+
+Feedback is most useful when it describes the starting situation, the environment failure and a reusable improvement. Keep private project details out of public reports.
 
 </details>
 
 <details>
-<summary><strong>Türkçe — Nedir, nasıl kullanılır?</strong></summary>
+<summary><strong>Türkçe — Tanıtım, senaryolar ve hazır promptlar</strong></summary>
 
-Bir projeyi açıyorsun. Kod yerinde, ama bağlam dağınık: eski bir README, önceki oturumdan kalma kurallar, çalıştığı kontrol edilmemiş bir test komutu, yalnızca bir konuşmada duran kararlar.
+## Nedir?
 
-**Codex Engineering Foundation, Codex'in bu başlangıç durumunu kullanılabilir bir mühendislik ortamına dönüştürmesine rehberlik eden, tekrar kullanılabilir bir Markdown dosyasıdır.** Mevcut yapıyı inceler, önemli eksikleri giderir, sonucu kontrol eder ve günlük işler için projeye özel yönlendirme bırakır.
+**Bir kodlama ajanının projende çalışabilmesi için gereken ortamı kurmaya veya onarmaya yönelik tek bir Markdown rehberi.** Hedef projede Codex'e verirsin. Kodu ve amacı keşfetmesine, önemli eksikleri gidermesine, çalışma talimatlarını oluşturmasına, ilgili araçları kontrol etmesine ve günlük işleri projeye özel yönlendirmeye devretmesine yardımcı olur.
 
-Burada *agentic engineering*, dosyaları inceleyebilen, değişiklik yapabilen ve kontrolleri çalıştırabilen bir kodlama ajanıyla çalışmak demek. Foundation, bu çalışmanın tutarlı biçimde sürdürülebilmesi için gerekli bağlamı ve çalışma koşullarını kurar.
-
-```text
-Projenin mevcut durumu
-        ↓
-Keşfet → Kur veya onar → Doğrula → Devret
-        ↓
-Projenin kendi talimatlarıyla günlük çalışma
-```
-
-## Ne zaman kullanırım?
-
-| Başlangıç durumun | Foundation'ın oluşturulmasına yardımcı olduğu yapı |
-| :--- | :--- |
-| Sıfırdan bir proje | Geliştirmeye başlamak için yeterli yön, kurulum ve çalışma rehberi. |
-| Kodu olan, ajan yönlendirmesi olmayan proje | Projeyi anlama, değiştirme ve doğrulama yolu. |
-| Çelişen veya eskimiş ajan talimatları | Yararlı bilgileri koruyan, tutarlı bir çalışma ortamı. |
-| Yeniden geliştirme veya modernizasyon | Mevcut davranış ile hedeflenen durumun açıkça ayrılması. |
-| Tanımadığın bir proje | Önemli belirsizlikleri görünür kılan, güvenilir bir başlangıç noktası. |
-
-Projeye uyum sağlar. Zorunlu bir teknoloji, klasör düzeni, skill koleksiyonu veya çoklu ajan yapısı dayatmaz.
-
-## Üç adımda başla
-
-1. **Hedef projeyi Codex'te aç.** Yeni bir projeyse amacını ve bildiğin kısıtları belirt.
-2. **[v2.3 rehberini](./FOUNDATION.md) o oturumun erişimine aç.** Dosyayı indirip ekle veya Codex'e erişebildiği yerel dosya yolunu ver. Dosyanın projenin içinde bulunması şart değil.
-3. **Aşağıdaki isteği gönder.** Köşeli parantezli alanları kendi bilgilerinle değiştir.
+*Agentic engineering ortamı*; talimatlar, erişilebilir proje bilgisi, araçlar, doğrulama yolları ve oturumlar arası devamlılığın birleşimidir. Foundation bunları projeye uyarlar; belirli bir teknoloji veya klasör şablonu dayatmaz.
 
 ```text
-Eklediğim Codex Engineering Foundation v2.3 rehberini bu projeye uygula.
-
-Proje: [hedef dizin]
-Amaç ve kısıtlar: [proje ne yapıyor, nelere dikkat edilmeli]
-
-Mevcut kodu, belgeleri, talimatları ve çalışma koşullarını incele.
-Mevcut çalışmaları ve yararlı yapıyı koru. Yeterli olan en küçük
-agentic engineering ortamını kur veya onar.
-
-Yalnızca keşfederek bulamadığın önemli bilgileri sor.
-Ürün özelliği geliştirmeden ve örnek bir işi atanmış göreve çevirmeden,
-bilgiye erişim yollarını ve ilgili çalışma koşullarını doğrula.
-
-Sonunda kapsamı açık bir READY veya NOT READY değerlendirmesi,
-kanıtlar, kalan sınırlamalar ve günlük işe nereden başlanacağını belirt.
+Projeyi incele → Ortamı kur veya onar → Doğrula → Günlük çalışmaya devret
 ```
 
-Mevcut bir projede kısa bir açıklama keşfe başlamak için yeterli. Rehberi kullanmadan önce kapsamlı bir şartname hazırlaman veya sıradaki özelliği seçmen gerekmiyor.
+**Ortaya çıkması gereken sonuç, kullanılabilir bir çalışma ortamıdır.** Ürün geliştirme sonrasında başlar. Kurulum gerektiğinde genel bir proje iskeleti içerebilir; ancak hazır olmayı kanıtlamak için özellik geliştirmez veya hata çözümünü tamamlamaz.
 
-## Sonunda ne elde ederim?
+## Başlamadan önce
 
-Yeni bir oturum şu soruları cevaplayabilmeli:
+1. Codex'te bu rehberin reposunu değil, **üzerinde çalışacağın projeyi** aç. Yeni projeyse hedef dizini kullan.
+2. [FOUNDATION.md](./FOUNDATION.md) dosyasını indirip oturuma ekle veya erişilebilir yerel yolunu belirt. Rehber için paket kurulumu gerekmez.
+3. Aşağıdan uygun senaryoyu seç. Köşeli parantezleri doldur, geçerli olmayan örnekleri çıkar. Her prompt tek başına kullanılabilir.
 
-- Bu projenin amacı ne?
-- Hangi talimatlar geçerli?
-- İlgili kod ve bilgi nerede?
-- Nasıl çalışırım, yaptığım değişikliği nasıl kontrol ederim?
-- Neler hâlâ bilinmiyor veya kullanılamıyor?
-- Sonraki oturumun devam edebilmesi için kararları nereye kaydederim?
+Tam bir şartname veya seçilmiş bir sonraki görev gerekmiyor. Bildiklerini belirt, bilinmeyenleri açık bırak. Aşağıdaki örnekler zorunlu teknoloji veya proje yapıları değildir.
 
-Sonuçta bir `AGENTS.md`, düzeltilmiş belge bağlantıları, kurulum komutları ve bilgi güncelleme talimatları bulunabilir. Hangi dosyalara ihtiyaç olduğu, projede zaten ne bulunduğuna bağlıdır. Başarı, üretilen dosya sayısıyla ölçülmez.
+## Başlangıç durumunu seç
 
-**READY**, belirtilen çalışma kapsamının desteklendiğini ve sınırlamaların açık olduğunu söyler. **NOT READY**, o çalışmayı engelleyen belirli bir ortam eksikliği kaldığını söyler. İkisi de uygulamanın hatasız olduğuna ilişkin bir iddia değildir.
-
-## Nerede durur?
-
-Foundation'ın görevi ortamı devrettiğinde biter. Gerektiğinde küçük, genel bir proje iskeleti hazırlayabilir; ancak hazır olmayı kanıtlamak için ilk özelliği geliştirmez, eski bir hatanın çözümünü tamamlamaz veya canlı iş işlemleri yürütmez.
-
-Sonrasında günlük görevlere projenin kendi talimatlarından başla. Kod değiştikçe yararlı bilgileri güncel tut. Ortam ciddi onarım gerektirirse veya projenin yönü değişirse Foundation'a yeniden başvur.
-
-Rehberi proje dışında tutabilirsin. Projede bir kopyasını saklarsan her oturumda yeniden okunması gereken talimat olarak değil, kurulum referansı olarak kullan.
-
-## Bu repoda ne var?
-
-| Dosya | Görevi |
+| Durum | Kullanılacak senaryo |
 | :--- | :--- |
-| [FOUNDATION.md](./FOUNDATION.md) | Codex'e vereceğin İngilizce kaynak rehber. |
-| [README.md](./README.md) | İngilizce ve Türkçe tanıtım ve kullanım. |
+| Henüz uygulama kodu yok | **1 · Yeni proje** |
+| Kod var, ajan yönlendirmesi yok | **2 · Ortam kurma** |
+| Talimatlar var ama güvenilir değil | **3 · Ortam onarma** |
+| Sistem yeniden geliştiriliyor veya yön değiştiriyor | **4 · Modernizasyon** |
+| Projeyi devraldın, güvenilir bağlam az | **5 · Proje bağlamını kurtarma** |
+| Ortam çalışıyor, yeterliliğini kontrol etmek istiyorsun | **6 · Hazırlık kontrolü** |
 
-Rehberi okumak veya uygulamak için paket kurulumu gerekmiyor. Hedef projenin kendi araçlarına, bağımlılıklarına ve erişimlerine yine ihtiyaç var.
+### 1 · Sıfırdan yeni proje
 
-## Durum ve geri bildirim
+**Örnek:** Kullanıcıları ve platformu belli olan, henüz kodlanmamış bir randevu uygulaması.
 
-V2.3; sıfırdan bir projede, ajan talimatları olmayan mevcut bir projede ve agentic ortamı onarım gerektiren bir projede denendi. Bu denemeler metnin iyileştirilmesini sağladı; her teknoloji veya senaryonun doğrulandığı anlamına gelmiyor. Daha kapsamlı modernizasyon ve proje kurtarma senaryoları gerçek proje doğrulaması bekliyor.
+**Adımlar:** Amacı ve bilinen kısıtları belirt → Codex'in kurulum için kritik sorularını yanıtla → geliştirme görevi vermeden önce ortamın devir sonucunu incele.
 
-Yararlı geri bildirim; başlangıç durumunu, rehberin hangi sonuca yol açtığını ve hangi genel kuralın iyileştirilebileceğini anlatır. Özel proje bilgilerini herkese açık bildirimlere ekleme.
+```text
+Eklediğim FOUNDATION.md (v2.3) rehberini yeni bir projeye uygula.
+Hedef dizin: [yol]
+Amaç ve kullanıcılar: [ör. küçük bir işletmenin randevu yönetimi]
+Bilinen kısıtlar: [platform, seçildiyse teknoloji, veri veya teslim kısıtları]
+Kararlaştırılmayanlar: [açık önemli seçimler]
 
----
+Mühendislik çalışmasına başlamak için yeterli en küçük ortamı kur.
+Yalnızca kurulumu etkileyen eksik kararları sor. Gerekiyorsa genel bir
+proje iskeleti hazırla; ilk ürün özelliğini geliştirme.
+Bağlama erişimi ve uygulanabilir çalışma koşullarını doğrula.
+Kapsam, kanıt, sınırlamalar ve günlük başlangıç noktasıyla birlikte
+READY veya NOT READY sonucu ver.
+```
 
-**Başarılı bir kurulum, sonraki oturuma açık bir başlangıç noktası bırakır.**
+**Beklenen sonuç:** Proje yönü, çalışma talimatları, başlangıç kurulum/doğrulama yolları ve sonraki işler için açık kalan kararlar.
+
+### 2 · Mevcut kod var, agentic ortam yok
+
+**Örnek:** Ekibin kullandığı, kısa bir README'si olan ama çalışma bilgisi belgelenmemiş bir backend.
+
+**Adımlar:** Repoyu ve kısa amacını belirt → Codex'in kodu, yapılandırmayı ve mevcut kontrolleri keşfetmesini sağla → bıraktığı yönlendirmeyi ve çalıştırma sınırlarını incele.
+
+```text
+Eklediğim FOUNDATION.md (v2.3) rehberini bu mevcut projeye uygula.
+Repo: [yol]
+Amaç: [sistem ne yapıyor]
+Bilinen çalışma kısıtları: [varsa]
+
+Soru sormadan önce kodu, belgeleri, yapılandırmayı ve mevcut kontrolleri
+incele. Eksik proje talimatlarını, bağlam erişimini, doğrulama rehberini
+ve bilgi güncelleme düzenini oluştur.
+Mevcut yapıyı ve kaydedilmemiş değişiklikleri koru. İlgili mevcut bir
+akışı yön bulma örneği olarak kullan; atanmış ürün görevine dönüştürme.
+Uygun temel kontrollerden önce komutların yan etkilerini incele.
+Kurulum sırasında uygulama hatalarını düzeltme veya iş verisi taşıma.
+READY/NOT READY sonucunu, kanıtları, sınırları ve günlük başlangıcı belirt.
+```
+
+**Beklenen sonuç:** Talimatlardan ilgili koda ve kontrollere ulaşılabilen bir yol; gözlenen davranış ile kabul edilmiş gereksinimlerin ayrılması.
+
+### 3 · Mevcut agentic ortamı onarma
+
+**Örnek:** AGENTS.md başka bir rehberle çelişiyor, bağlantılar silinmiş dosyalara gidiyor veya her oturum gereksiz miktarda bağlam yüklüyor.
+
+**Adımlar:** Gördüğün belirtileri anlat → Codex'in talimatları kapsam ve kanıtlarıyla karşılaştırmasını sağla → yapılan sınırlı onarımları ve korunan yapıyı incele.
+
+```text
+Eklediğim FOUNDATION.md (v2.3) ile bu agentic ortamı onar.
+Repo: [yol]
+Belirtiler: [ör. çelişen talimatlar, eski yollar, tekrar eden keşif]
+Korunacak tercihler: [bilinen çalışma kuralları, varsa]
+
+Mevcut talimatları, bağlam belgelerini, skill'leri ve doğrulama yollarını
+incele. Değişiklikten önce somut çelişkileri ve eksikleri belirle.
+Yararlı yapıyı ve kullanıcı tercihlerini koru; paralel bir talimat sistemi
+oluşturma. Eski yönlendirmeleri açıkça işaretle, yararlı geçmişi koru.
+Yalnızca gerekçeli ortam sorunlarını onar; ürün kodunu değiştirme.
+Görev bağlamına erişimi ve uygun çalışma koşullarını doğrula.
+Onarımları, korunan bilgileri, kanıtları ve kapsamı belirtilmiş READY/NOT READY
+sonucunu raporla.
+```
+
+**Beklenen sonuç:** Mevcut yapı içinde açık yetki sırası, çalışan referanslar ve tutarlı günlük çalışma rehberi.
+
+### 4 · Yeniden geliştirme veya modernizasyon
+
+**Örnek:** Belirli iş akışlarını koruyarak masaüstü uygulamasını web uygulamasıyla değiştirmek.
+
+**Adımlar:** Mevcut ve hedef konumları belirt → değişim nedenini ve korunacak davranışları açıkla → ortam tamamlandı sayılmadan önce önemli hedef belirsizliklerini çöz.
+
+```text
+Eklediğim FOUNDATION.md (v2.3) ile modernizasyon ortamını hazırla.
+Mevcut sistem: [yol veya erişilebilir kaynaklar]
+Hedef proje: [yol; aynı repo olabilir]
+Değişim nedeni: [neden]
+Hedef yön: [neler değişmeli]
+Korunacaklar: [iş akışları, sözleşmeler veya uyumluluk]
+Veri taşıma ve çalışma kısıtları: [bilinen sınırlar veya bilinmeyenler]
+
+Mevcut uygulamayı kabul edilmiş hedef amaçtan ayır.
+Her eski davranışın kopyalanacağını veya kaldırılacağını varsayma.
+Eksik hedef kararlarını yalnızca ortam hazırlığını engelledikleri
+ölçüde çöz. Hedef çalışma rehberini, referans erişimini ve doğrulama
+yollarını kur. Yeniden geliştirmeyi veya veri taşımasını başlatma.
+Kanıtlar, açık kararlar ve devir bilgisiyle READY/NOT READY sonucu ver.
+```
+
+**Beklenen sonuç:** Korunacak/değişecek davranışları açık olan, ilgili eski sistem kanıtlarına erişilebilen hedef çalışma ortamı.
+
+### 5 · Tanımadığın proje veya kayıp bağlam
+
+**Örnek:** Eski belgeleri olan, güvenilir kurulum açıklaması bulunmayan bir repoyu devraldın.
+
+**Adımlar:** Kaynakları ve bildiklerini paylaş → Codex'in asgari güvenilir bağlamı çıkarmasını sağla → doğrulanan bilgileri, belirsizlikleri ve erişim engellerini incele.
+
+```text
+Eklediğim FOUNDATION.md (v2.3) ile bu projenin bağlamını kurtar.
+Repo: [yol]
+Bildiklerim: [kısa bilgiler veya bilinmiyor]
+Diğer kaynaklar: [varsa belgeler veya referanslar]
+
+Mühendislik ortamı kurmaya yetecek güvenilir anlayışı oluştur.
+Gözlenen bilgileri, çıkarımları ve bilinmeyenleri ayır.
+Gereksinim uydurma veya eski belgeleri güncel gerçek kabul etme.
+Mevcut çalışmayı koru. En küçük yararlı erişim ve çalışma rehberini
+oluştur; temel kontrollerden önce çalıştırma yan etkilerini incele.
+Sistemi yeniden tasarlama veya ürün görevine başlama.
+Kapsamı belirtilmiş READY/NOT READY, kanıtlar ve kalan bilgi ihtiyacını sun.
+```
+
+**Beklenen sonuç:** Uydurulmuş bir şartname yerine güvenilir yönlendirme ve hâlâ bilinmeyenlerin açık kaydı.
+
+### 6 · Hazır ortamın yeterliliğini kontrol etme
+
+**Örnek:** Güncel talimatları ve kontrolleri olan bir projede önemli bir eksik kalıp kalmadığını öğrenmek istiyorsun.
+
+**Adımlar:** Günlük çalışma kapsamını belirt → yalnızca inceleme iste → raporlanan eksiklerin onarımına ayrıca karar ver.
+
+```text
+Eklediğim FOUNDATION.md (v2.3) ile bu ortamı değerlendir.
+Repo: [yol]
+Hedeflenen günlük çalışma kapsamı: [mühendislerin yapabilmesi gerekenler]
+
+Mevcut yönlendirmeyi incele; ilgili bir görevin bağlam ve doğrulama
+rotasını takip et. Mevcut izinler içinde yalnızca uygun, zarar vermeyen
+temel kontrolleri çalıştır. Proje dosyalarını düzenleme veya yeni bir
+talimat yapısı oluşturma. Somut kanıtlar, sınırlar ve varsa gereken
+en küçük onarımlarla READY veya NOT READY sonucu ver.
+```
+
+**Beklenen sonuç:** Kanıta dayalı hazırlık değerlendirmesi. Yeterli bir ortam için yeni dosya üretmek gerekmez.
+
+## Sonucu nasıl değerlendireceğim?
+
+| Sonuç | Anlamı | Sonraki adımın |
+| :--- | :--- | :--- |
+| **READY** | Belirtilen mühendislik kapsamı destekleniyor; sınırlar açık. | Projenin kendi talimatlarından günlük göreve başla. |
+| **NOT READY** | Belirli bir ortam eksikliği bu kapsamı engelliyor. | Belirtilen önkoşulu veya kararı çöz, etkilenen yeterliliği yeniden değerlendir. |
+
+Kanıt ara: talimatlar bulunabiliyor mu, kod ve bilgi erişilebilir mi, ilgili kontrollerin gerçek sonuçları var mı, sonraki oturum kararları nereye kaydedeceğini biliyor mu? Dosya oluşturmak tek başına başarı değildir. Geçen bir derleme ürün kabulü anlamına gelmez; ileride gerekecek bir entegrasyonun henüz denenmemesi de otomatik olarak kurulum engeli değildir.
+
+## Devirden sonra
+
+Günlük görevlerde projenin kendi talimatlarını kullan, proje değiştikçe yararlı bilgiyi güncelle. FOUNDATION.md dosyasını proje içinde veya dışında isteğe bağlı kurulum referansı olarak tutabilirsin. Her kodlama oturumunda değil, ciddi ortam onarımı veya yön değişikliği gerektiğinde yeniden uygula.
+
+## Dosyalar ve doğrulama durumu
+
+- **[FOUNDATION.md](./FOUNDATION.md):** Codex'in uygulayacağı İngilizce kaynak rehber.
+- **README.md:** Bu iki dilli kullanım rehberi; promptlar Foundation'ı tamamlar.
+
+V2.3; yeni proje, mevcut kod ve ortam onarımı senaryolarında gerçek projelerle denendi. Kapsamlı modernizasyon ve proje kurtarma hâlâ gerçek proje doğrulaması bekliyor. Metnin sonlandırılması her senaryo veya teknolojinin doğrulandığı anlamına gelmez.
+
+En yararlı geri bildirim; başlangıç durumunu, ortamın nerede aksadığını ve tekrar kullanılabilir iyileştirmeyi anlatır. Özel proje bilgilerini herkese açık bildirimlerden çıkar.
 
 </details>
