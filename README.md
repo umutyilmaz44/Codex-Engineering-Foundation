@@ -202,7 +202,7 @@ Use project-local instructions for everyday tasks and update useful knowledge as
 - **[FOUNDATION.md](./FOUNDATION.md):** The English source guide applied by Codex.
 - **README.md:** This bilingual usage guide; the prompts supplement the Foundation.
 
-V2.3 has been exercised in real new-project, existing-code and environment-repair cases. Broader modernization and recovery still need real-project validation. Finalized wording does not certify every scenario or stack.
+V2.3 has been exercised in real new-project, existing-code and environment-repair cases. Finalized wording does not certify every scenario or stack.
 
 Feedback is most useful when it describes the starting situation, the environment failure and a reusable improvement. Keep private project details out of public reports.
 
@@ -399,7 +399,7 @@ Günlük görevlerde projenin kendi talimatlarını kullan, proje değiştikçe 
 - **[FOUNDATION.md](./FOUNDATION.md):** Codex'in uygulayacağı İngilizce kaynak rehber.
 - **README.md:** Bu iki dilli kullanım rehberi; promptlar Foundation'ı tamamlar.
 
-V2.3; yeni proje, mevcut kod ve ortam onarımı senaryolarında gerçek projelerle denendi. Kapsamlı modernizasyon ve proje kurtarma hâlâ gerçek proje doğrulaması bekliyor. Metnin sonlandırılması her senaryo veya teknolojinin doğrulandığı anlamına gelmez.
+V2.3; yeni proje, mevcut kod ve ortam onarımı senaryolarında gerçek projelerle denendi. Metnin sonlandırılması her senaryo veya teknolojinin doğrulandığı anlamına gelmez.
 
 En yararlı geri bildirim; başlangıç durumunu, ortamın nerede aksadığını ve tekrar kullanılabilir iyileştirmeyi anlatır. Özel proje bilgilerini herkese açık bildirimlerden çıkar.
 
